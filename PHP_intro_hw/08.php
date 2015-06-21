@@ -36,7 +36,11 @@
 		$l = $_POST[9];
 	}
 	$egn = $a*2+$b*4+$c*8+$d*5+$e*10+$f*9+$j*7+$k*3+$l*6;
+	
 	$egn_final_number = (float)$egn % 11;
+	if ($egn_final_number == 10) {
+		$egn_final_number = 0;
+		} 
 	echo "Последната цифра на Вашето ЕГН е ".$egn_final_number.'<br/>';
 	echo "Вашият пълен ЕГН е ".$a.$b.$c.$d.$e.$f.$j.$k.$l.$egn_final_number;
 
