@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<form method="post">
+	<form method="post" action="08.php">
 		<p>Въведете първите 9 цифри от Вашето ЕГН</p>
 		<p>
 			<input type="number" name="1">
@@ -24,19 +24,19 @@
 	</form>
 	<?php 
 	mb_internal_encoding('UTF-8');
-	if (isset($_POST)) {
+	if (!empty($_POST)) {
 		$a = $_POST[1];
 		$b = $_POST[2];
 		$c = $_POST[3];
 		$d = $_POST[4];
 		$e = $_POST[5];
 		$f = $_POST[6];
-		$j = $_POST[7];;
+		$j = $_POST[7];
 		$k = $_POST[8]; 
 		$l = $_POST[9];
-	}
+	
 	$egn = $a*2+$b*4+$c*8+$d*5+$e*10+$f*9+$j*7+$k*3+$l*6;
-	echo "$egn".'<br/>';
+	//echo "$egn".'<br/>';
 	
 	$egn_final_number = (float)$egn % 11;
 	if ($egn_final_number == 10) {
@@ -44,6 +44,7 @@
 		} 
 	echo "Последната цифра на Вашето ЕГН е ".$egn_final_number.'<br/>';
 	echo "Вашият пълен ЕГН е ".$a.$b.$c.$d.$e.$f.$j.$k.$l.$egn_final_number;
+}
 
 	?>
 
