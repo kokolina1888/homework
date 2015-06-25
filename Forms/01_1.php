@@ -7,7 +7,7 @@
 <body>
 <form action="event.php" method="get">
 <p>Изберете категория събитие -</p>
-<input type="radio" name="type" value="music">Музика
+<input type="radio" name="type" value="music" required>Музика
 <input type="radio" name="type" value="sport">Спорт
 <input type="radio" name="type" value="cinema">Кино
 <P>Къде - </P>
