@@ -16,7 +16,7 @@ session_start();
 				<input type="number" name="quantity[]" min="0" max="100">
 			</li>
 			<li>
-				<input type="checkbox" name="products[]" value="<Риза_23.50">Риза 23,50 лв
+				<input type="checkbox" name="products[]" value="Риза_23.50">Риза 23,50 лв
 				<span>Изберете количество</span>
 				<input type="number" name="quantity[]" min="0" max="100">
 			</li>
@@ -46,11 +46,17 @@ session_start();
 	if (!empty($_POST)) {
 		$_SESSION['products'] = $_POST['products'];
 		$_SESSION['quantity'] = $_POST['quantity'];
+		$_SESSION['quantity'] = array_filter( $_SESSION['quantity']);
+		//var_dump($_SESSION['products'])."<br />";
+		
+		$_quantity = implode("_", $_SESSION['quantity']);
+		$_SESSION['quantity']= explode("_", $_quantity);
+		var_dump($_SESSION['quantity']);
 		echo "<p>
 		<a href='card_info.php'>"
 		.$_SESSION['username']. 
 		", въведете номера на дебитната/кредитната си карта и наличната сума!</a></p>";
-		var_dump($_SESSION['products']);
+		//var_dump($_SESSION['products']);
 	}
 	?>
 	
