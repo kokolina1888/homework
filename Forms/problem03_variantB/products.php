@@ -43,12 +43,12 @@ session_start();
 
 	</form>
 	<?php 
-	if (!empty($_POST)) {
+	/*if (!empty($_POST)) {
 		$_SESSION['products'] = $_POST['products'];
 		$_SESSION['quantity'] = $_POST['quantity'];
 		$_SESSION['quantity'] = array_filter( $_SESSION['quantity']);
 		//var_dump($_SESSION['products'])."<br />";
-		
+		var_dump($_SESSION['quantity']);
 		$_quantity = implode("_", $_SESSION['quantity']);
 		$_SESSION['quantity']= explode("_", $_quantity);
 		//var_dump($_SESSION['quantity']);
@@ -57,6 +57,22 @@ session_start();
 		.$_SESSION['username']. 
 		", въведете номера на дебитната/кредитната си карта и наличната сума!</a></p>";
 		//var_dump($_SESSION['products']);
+	}*/
+	if (empty($_POST['products'])||empty($_POST['quantity'])) {
+			echo "Моля изберете продукти и количество!";
+		}
+	else {
+		$_SESSION['products'] = $_POST['products'];
+		$_SESSION['quantity'] = $_POST['quantity'];
+		$_SESSION['quantity'] = array_filter( $_SESSION['quantity']);
+		
+		$_quantity = implode("_", $_SESSION['quantity']);
+		$_SESSION['quantity']= explode("_", $_quantity);
+		echo "<p>
+		<a href='card_info.php'>"
+		.$_SESSION['username']. 
+		", въведете номера на дебитната/кредитната си карта и наличната сума!</a></p>";
+		
 	}
 	?>
 	

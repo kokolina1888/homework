@@ -21,7 +21,7 @@ session_start();
 	<?php 
 	if (!empty($_POST['username']) && !empty($_POST['password'])) {
 			$_SESSION['username'] = $_POST['username'];
-			echo "<p><a href='products.php'>Успешно се ргистрирахте, "
+			echo "<p><a href='products.php'>Успешно се регистрирахте, "
 			. $_SESSION['username'].
 			"! Изберете Вашите продукти!!</a></p>";
 		}

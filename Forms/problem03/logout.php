@@ -10,7 +10,6 @@
 session_start();
 if (session_destroy()) {
 	header("Location: index.php");
-	echo "Въведете потребителско име и парола за да се регистрирате!";
 }
 ?>
 	

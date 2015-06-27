@@ -10,7 +10,9 @@ session_start();
 </head>
 <body>
 	<form method="post" action="card_info.php">
+		<p>номер накредитната карта</p>
 		<input type="text" name="card_info">
+		<p>налична сума</p>
 		<input type="text" name="money_account">
 		<!--regex for credit card number-->
 		<input type="submit" value="Въведи">
@@ -26,7 +28,7 @@ session_start();
 		//print_r($quantity)."<br />";
 		//echo $count;
 		$sum_products = 0;
-		echo "Вашата количка"
+		echo "Вашата количка съдържа -"
 		?>
 		<ol>
 			<?php
