@@ -1,0 +1,26 @@
+textarea {
+	width: 80%;
+	height: 150px;
+	position: relative;
+	margin-left: 10%;
+}
+p {
+	text-align: center;
+	width: 80%;
+	position: relative;
+	margin-left: 10%;
+}
+input[type=submit] {
+	width: 100%;
+}
+div {
+	color: green;
+	width: 80%;
+	position: relative;
+	margin-left: 10%;
+	font-size: 15px;
+
+}
+div span {
+	color: tomato;
+}

@@ -1,0 +1,33 @@
+body {
+	background-color: grey;
+}
+textarea {
+	width: 80%;
+	height: 150px;
+	position: relative;
+	margin-left: 10%;
+}
+p {
+	text-align: center;
+	width: 80%;
+	position: relative;
+	margin-left: 10%;
+}
+input[type=submit] {
+	width: 100%;
+	background-color: yellow;
+}
+div {
+	color: white;
+	width: 80%;
+	position: relative;
+	margin-left: 10%;
+	font-size: 15px;
+
+}
+div span.first {
+	color: green;
+}
+div span.second {
+	color: tomato;
+}
