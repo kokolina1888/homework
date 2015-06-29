@@ -10,7 +10,7 @@ session_start();
 </head>
 <body>
 	<form method="post" action="card_info.php">
-		<p>номер накредитната карта</p>
+		<p>номер на кредитната карта</p>
 		<input type="text" name="card_info">
 		<p>налична сума</p>
 		<input type="text" name="money_account">
@@ -21,12 +21,8 @@ session_start();
 	if (!empty($_POST)) {
 		$money_account = $_POST['money_account'];
 		$count = count($_SESSION['products']);
-		//echo $count."<br/>";
 		$products = $_SESSION['products'];
-		//print_r($products)."<br />";
 		$quantity = $_SESSION['quantity'];
-		//print_r($quantity)."<br />";
-		//echo $count;
 		$sum_products = 0;
 		echo "Вашата количка съдържа -"
 		?>

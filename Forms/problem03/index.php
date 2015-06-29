@@ -1,6 +1,25 @@
 <?php 
 session_start();
-?>
+if (!empty($_POST))
+		 {
+		 	$_SESSION['username'] = $_POST['username'];
+		 	$_SESSION['password'] = $_POST['password'];
+		 	if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {			
+			echo "<p><a href='products.php'>Успешно се регистрирахте, "
+			. $_SESSION['username'].
+			"! Изберете Вашите продукти!!</a></p>";
+		}
+		else {
+			if ($_SESSION['username'] === '') {
+				$err_username = "<div>Моля попълнете потребител!</div>";
+			}
+			if ($_SESSION['password'] === '') {
+				$err_password = "<div>Моля попълнете парола!</div>";
+			}
+		}
+	}
+	?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +31,21 @@ session_start();
 	<form method="post" action="index.php">
 		<p>Потребителско име:</p>
 		<input type="text" name="username">
+		<?php if (isset($err_username)) {
+			echo $err_username;
+		}
+		?>
 		<p>Парола:</p>
 		<input type="password" name="password">
+		<?php if (isset($err_password)) {
+			echo $err_password;
+		}
+		?>
 		<p>
-			<input type="submit" value="ВХОД">
+			<input type="submit" name="submit" value="ВХОД">
 		</p>
 	</form>
-	<?php 
-	if (!empty($_POST['username']) && !empty($_POST['password'])) {
-			$_SESSION['username'] = $_POST['username'];
-			echo "<p><a href='products.php'>Успешно се регистрирахте, "
-			. $_SESSION['username'].
-			"! Изберете Вашите продукти!!</a></p>";
-		}
-		else {
-			echo "Моля, попълнете потребителско име и парола!";
-		}
-
+	<?php
 	//Защо не работи така - мога да вляза и без въведени user password? а само като му конкретизирам username password not empty
 	/*if (empty($_POST)) {
 		var_dump($_POST);
