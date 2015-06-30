@@ -19,6 +19,13 @@ session_start();
 	</form>
 	<?php 
 	if (!empty($_POST)) {
+		if ($_POST['card_info'] ==='') {
+			echo "Моля въведете номера на Вашата карта!";
+		}
+		elseif ($_POST['money_account'] == null) {
+			echo "Моля въведете наличността по сметката си!";
+		}
+		else {
 		$money_account = $_POST['money_account'];
 		$count = count($_SESSION['products']);
 		$products = $_SESSION['products'];
@@ -51,6 +58,7 @@ session_start();
 			echo "<a href='logout.php'>Излизане</a>";
 		}
 		
+	}
 	}
 
 	?>

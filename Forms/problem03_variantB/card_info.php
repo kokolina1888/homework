@@ -19,16 +19,19 @@ session_start();
 	</form>
 	<?php 
 	if (!empty($_POST)) {
+		if ($_POST['card_info'] ==='') {
+			echo "Моля въведете номера на Вашата карта!";
+		}
+		elseif ($_POST['money_account'] == null) {
+			echo "Моля въведете наличността по сметката си!";
+		}
+		else {
 		$money_account = $_POST['money_account'];
 		$count = count($_SESSION['products']);
-		//echo $count."<br/>";
 		$products = $_SESSION['products'];
-		//print_r($products)."<br />";
 		$quantity = $_SESSION['quantity'];
-		//print_r($quantity)."<br />";
-		//echo $count;
 		$sum_products = 0;
-		echo "Вашата количка съдържа"
+		echo "Вашата количка съдържа -"
 		?>
 		<ol>
 			<?php
@@ -58,6 +61,7 @@ session_start();
 			echo "<a href='logout.php'>Излизане</a>";
 		}
 		
+	}
 	}
 
 	?>

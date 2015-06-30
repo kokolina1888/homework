@@ -9,5 +9,8 @@ session_start();
 </head>
 <body>
 Попълнете за оформяне на покупката!	
+<?php 
+echo "<a href='logout.php'>Излизане</a>";
+?>
 </body>
 </html>
