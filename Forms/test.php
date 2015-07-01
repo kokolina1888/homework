@@ -1,3 +1,4 @@
+БРОИ!!!
 <?php
 session_start();
 ?>

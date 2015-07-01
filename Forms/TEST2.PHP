@@ -1,3 +1,4 @@
+РАБОТИ
 <form name="testForm" method="post">
 
 <?php $cnt = isset($_POST["cnt"]) ? $_POST["cnt"] : 0; ?>
