@@ -1,7 +1,7 @@
 РАБОТИ
 <form name="testForm" method="post">
 
-<?php $cnt = isset($_POST["cnt"]) ? $_POST["cnt"] : 0; ?>
+<?php  ?>
 <?php
   if(isset($_POST['next'])){
     if($cnt< 10){

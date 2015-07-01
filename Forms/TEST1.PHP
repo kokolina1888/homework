@@ -9,6 +9,7 @@
 <input type="submit" name="next" id="next" value="NEXT"/>
 <input type="submit" name="clear" id="clear" value="CLEAR"/>
 
+    }
 <?php
     if(isset($_POST['next'])){
         if($_SESSION['cnt']< 10){

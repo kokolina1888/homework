@@ -10,6 +10,7 @@ session_start();
 <body>
 Попълнете за оформяне на покупката!	
 <?php 
+echo "<br />";
 echo "<a href='logout.php'>Излизане</a>";
 ?>
 </body>

@@ -68,9 +68,6 @@ session_start();
 			if (empty($_POST['products'])) {
 				echo "Моля изберете продукти!";
 			}
-			if (empty($_POST['quantity'])) {
-				echo "Моля изберете количество!";
-			}
 			elseif (!empty($_POST['products']) && !empty($_POST['quantity']) ) {		
 
 		$_SESSION['products'] = $_POST['products'];
@@ -85,6 +82,8 @@ session_start();
 		", въведете номера на дебитната/кредитната си карта и наличната сума!</a></p>";
 	}
 	}
+	echo "<br />";
+	echo "<a href='logout.php'>Излизане</a>";
 	?>
 	
 </body>
