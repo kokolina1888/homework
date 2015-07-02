@@ -96,5 +96,6 @@ if(isset($_POST['next'])){
 </body>
 </html>
 <?php 
-echo "<a href='Logout.php'>Нулиране</a>";
+echo "<a href='zero.php'>Започнете нова игра</a>";
+echo "<a href='Logout.php'>Излизане</a>";
 ?>
