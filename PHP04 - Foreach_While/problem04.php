@@ -23,9 +23,9 @@
 				Моля въведете число по-голямо от 1!!!</span>";
 			}
 			else {
-				
+				$div = $number/2;
 				$arr = array();
-				for ($i= 2; $i < $number ; $i++) { 
+				for ($i= 2; $i <= $div ; $i++) { 
 					if ($number % $i == 0) {
 						$arr[] = $i;
 						$checker++;
