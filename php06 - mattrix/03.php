@@ -57,10 +57,13 @@ for ($i=0 ; $i < $m  ; $i++ ) {
 }
 
 }
+echo "<table border='1'>";
 for ($i=0; $i < $m; $i++) { 
+	echo "<tr>";
 	foreach ($arr[$i] as $value) {
-		echo $value.' ';
+		echo '<td>'.$value.'<td/>';
 	}
-	echo "<br />";
+	echo "<tr/>";
 }
+echo "<table/>";
 ?>

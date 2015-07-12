@@ -136,11 +136,11 @@ for ($i=0; $i < $m ; $i++) {
 		echo '<td>';
 		//echo "[$i,$j] - ";
 		echo $arr[$i][$j];
-		echo '<td />';	
+		echo '</td >';	
 	}
-	echo "<tr />";
+	echo "</tr >";
 }
 ?>
-<table/>
+</table>
 </body>
 </html>
