@@ -9,19 +9,19 @@
 	<form action="02.php" method="post">
 		<p>РЕГИСТРАЦИЯ</p>
 		<p>Въведете потребителско име
-			<input type="text" name="username" required>
+			<input type="text" name="username">
 		</p>
 
 		<p>Въведете парола
-			<input type="password" name="password" required>
+			<input type="password" name="password" >
 		</p>
 
 		<p>
 			Въведете email
-			<input type="email" name="email" required>
+			<input type="email" name="email">
 		</p>		
 		<p>Посочете вашите интереси</p>
-		<p><input type="checkbox" name="interest[]" value="музика" required>Музика</p>
+		<p><input type="checkbox" name="interest[]" value="музика">Музика</p>
 		<p><input type="checkbox" name="interest[]" value="спорт">Спорт</p>
 		<p><input type="checkbox" name="interest[]" value="кино">Кино</p>
 		<p><input type="checkbox" name="interest[]" value="книги">Книги</p>
