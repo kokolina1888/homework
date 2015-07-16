@@ -1,43 +1,37 @@
-<?php
+<?php 
 session_start();
-$level1 = array(array());
-$p = rand(0, 99);
+echo "<h2>Congratulations! You have completed level 1! Proceed to the next level!</h2>";
+$level2 = array(array());
+$p = rand(0, 19);
 if (empty($_SESSION['cnt'])){
         $_SESSION['cnt'] = 0;
     }
     if (empty($_SESSION['result'])){
         $_SESSION['result'] = 0;
     }
-if ($_SESSION['cnt'] <= 10) {
-for ($i=0; $i < 100; $i+=2) { 
-	$m = rand(1, 1000);
-	$n = rand(1, 1000);	
-	if ($m > $n) {
-			//problem
-		$level1[$i][0] = "$m"."-"."$n"."=?";	
+if ($_SESSION['cnt'] > 10 && $_SESSION['cnt'] <= 20) {
+for ($j=0; $j < 20; $j+=2) { 
+	$m = rand(1, 10);
+	$n = rand(1, 10);	
+				//problem
+		$level2[$j][0] = "$m"."*"."$n"."=?";	
 			//answer
-		$level1[$i][1] = $m - $n;					
-	} else {
-		//problem
-		$level1[$i][0] = "$n"."-"."$m"."=?";	
+		$level2[$j][1] = $m * $n;					
+		$level2[$j+1][0] = $n*$m."/"."$m"."=?";	
 			//answer
-		$level1[$i][1] = $n - $m;		
-	}
-	//problem
-	$level1[$i+1][0] = "$n"."+"."$m"."=?";	
-			//answer
-		$level1[$i+1][1] = $n + $m;		
+		$level2[$j+1][1] = $m*$n/$m;		
 	}
 }
-//var_dump($level1);
+//TODO level 3 sqr(m*m) - за да е сигурно, че е цяло число!!!!!
+//var_dump($level2);
 ?>
-<form action="index.php" method="post">
+<form action="level2.php" method="post">
 	<p><?php 
-		$problem = $level1[$p][0];
+		$problem = $level2[$p][0];
 		echo $problem;?>
 	</p>
 	<input type="text" name="user_answ">
-	<input type="hidden" name="answ" value="<?php echo $level1[$p][1]; ?>">
+	<input type="hidden" name="answ" value="<?php echo $level2[$p][1]; ?>">
 	<p><input type="submit" name="submit" value="answer"></p>
 
 </form>
@@ -60,10 +54,10 @@ if(isset($_POST['submit'])) {
 		echo "<h3>".$_SESSION['result']."</h3>";
 	}
 	//TODO when to proceed to the next level, when to loose the game ...
-	if ($_SESSION['cnt'] == 10 && $_SESSION['result'] > 35 ) {
-		header('Location: level2.php');
-	} elseif($_SESSION['cnt'] == 10 && $_SESSION['result'] <= 0) {
-		$_SESSION['cnt'] = 0;
+	if ($_SESSION['cnt'] == 20 && $_SESSION['result'] > 35 ) {
+		header('Location: level3.php');
+		//същото съобщение като на ниво 2!!!
+	} elseif($_SESSION['cnt'] == 20 && $_SESSION['result'] <= 0) {
 		header('Location: end_of_game.php');
 		
 	}
