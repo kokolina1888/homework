@@ -5,7 +5,7 @@
 	<title>Events</title>
 </head>
 <body>
-	<form action="01.php" method="get">
+	<form action="01.php" method="post">
 		<p>Изберете категория събитие -</p>
 		<input type="radio" name="type" value="music" required>Музика
 		<input type="radio" name="type" value="sport">Спорт
@@ -19,7 +19,8 @@
 		<input type="submit" value="Избери">	
 	</form>
 	<?php 
-	mb_internal_encoding('UTF-8');
+	//тук слагам post, защото се съмнявам, че Eмо Чолаков ще може да събере прогнозата си в 250 символар колкото е ограничението за get!
+	
 	if (!empty($_GET)) {
 		$type = $_GET['type'];
 		$place = $_GET['place'];
