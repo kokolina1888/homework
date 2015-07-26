@@ -28,7 +28,7 @@ if (!$conn) {
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 jumbotron">
+			<div class="col-md-12 just">
 				<div class="first text-center col-xs-6 col-xs-offset-3">
 				<p><a href="login.php">log in</a> or fill in the registration form!</p>
 					<div class="row">
