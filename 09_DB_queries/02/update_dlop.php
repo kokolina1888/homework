@@ -1,7 +1,7 @@
 	<?php 
 	$page_name = "Update Dlop Info";
 	require_once('includes/header.php');
-//options for races
+
 	$q = "SELECT first_name, 
 	last_name, 
 	race, 

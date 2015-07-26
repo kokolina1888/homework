@@ -75,7 +75,7 @@
 		<a class='btn btn-success' href='index.php' role='button'>Back to DLOPS`s table</a>
 	</div>
 	<?php 
-	if (!empty($_GET['submit'])) {
+	if (!empty($_GET)) {
 		if (!empty($_GET['gender'])) {
 			$first_name = $_GET['first_name'];
 			$last_name = $_GET['last_name'];
