@@ -13,7 +13,7 @@
 				<input type="text" class="form-control" name="first_name" id="fn">
 			</div>	
 		</div>
-		<div class="form-group">
+		<!--<div class="form-group">
 			<label for="ln" class="col-xs-2 control-label">Last name</label>
 			<div class="col-xs-10">
 				<input type="text" class="form-control" name="last_name" id="ln">
@@ -23,14 +23,14 @@
 			<label for="race" class="col-xs-2 control-label">Race</label>
 			<div class="col-xs-4">
 				<select name="race" class="form-control" id="race">
-					<?php 
+					<?php/* 
 					if (mysqli_num_rows($race_result) > 0) {
 						while ($race_row = mysqli_fetch_assoc($race_result)) {
 							foreach ($race_row as $value) {
 								echo "<option value='$value'>".$value."</option>";			
 							}
 						}
-					}
+					}*/
 					?>
 				</select>
 			</div>
@@ -63,7 +63,7 @@
 					?>
 				</select>
 			</div>
-		</div>
+		</div>-->
 		<div class="form-group">
 			<div class="col-xs-4 col-xs-offset-1">
 				<button type="submit" class="btn btn-info">Add New Dlop Info</button>
@@ -74,23 +74,24 @@
 	<div class="col-xs-4 col-xs-offset-8">
 		<a class='btn btn-success' href='index.php' role='button'>Back to DLOPS`s table</a>
 	</div>
+	
 	<?php 
 	if (!empty($_GET)) {
 		if (!empty($_GET['gender'])) {
 			$first_name = $_GET['first_name'];
-			$last_name = $_GET['last_name'];
+			/*$last_name = $_GET['last_name'];
 			$race = $_GET['race'];
 			$gender = $_GET['gender'];
 			$date_of_birth = $_GET['date_of_birth'];
 			$weight = $_GET['weight'];
-			$status = $_GET['status'];
+			$status = $_GET['status'];*/
 
-			$q = "INSERT INTO dlops (first_name, last_name, race, gender, date_of_birth, weight, status) 
-			VALUES ('$first_name', '$last_name', '$race', '$gender', '$date_of_birth', $weight, '$status')";
+			$q = "INSERT INTO `measures`(`measure`) VALUES ('$first_name')";
 			if (mysqli_query($conn, $q)) {
-				header('Location: index.php');
+				echo "Success!";
 			} 
 		}
 	}  
 	require_once('includes/footer.php');
 	?>
+
