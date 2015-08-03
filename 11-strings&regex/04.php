@@ -31,7 +31,7 @@ if (!empty($_GET)) {
 	$text = $_GET['sample'];
 	
 	$pattern_lv = "/([0-9]+)([.,][0-9]{2})?( лв)/";
-	$pattern_date = "/[1,2][0-9]{3}-[0,1][0-9]-[0-3][0-9]/";
+	$pattern_date = "/([1,2][0-9]{3}-)(0[0-9]-|1[0-2]-)(0[1-9]|[1-2][0-9]|3[0-1])/";
 	$pattern_words = "/\b[a-zA-z]{6}\b/";
 	$replace = "(6letter word)";
 	
